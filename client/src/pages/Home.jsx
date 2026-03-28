@@ -44,7 +44,15 @@ const Home = () => {
     const fetchProducts = async () => {
       try {
         const { data } = await axios.get('/api/products?isBestSeller=true&pageSize=8');
-        setProducts(data.products || []);
+        const bestSellers = data.products || [];
+
+        if (bestSellers.length > 0) {
+          setProducts(bestSellers);
+        } else {
+          const allProductsResponse = await axios.get('/api/products?pageSize=8');
+          setProducts(allProductsResponse.data.products || []);
+        }
+
         setLoading(false);
       } catch (err) {
         setLoading(false);

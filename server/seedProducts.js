@@ -7,10 +7,10 @@ dotenv.config({ path: path.join(__dirname, '.env') });
 
 const productsData = [
   // Cakes
-  { name: 'Belgian Chocolate Truffle', category: 'Cakes', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80' },
-  { name: 'Red Velvet Royale', category: 'Cakes', image: 'https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?w=800&q=80' },
-  { name: 'Strawberry Shortcake Dream', category: 'Cakes', image: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800&q=80' },
-  { name: 'Blueberry Bliss Cheesecake', category: 'Cakes', image: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=800&q=80' },
+  { name: 'Belgian Chocolate Truffle', category: 'Cakes', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80', isBestSeller: true },
+  { name: 'Red Velvet Royale', category: 'Cakes', image: 'https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?w=800&q=80', isBestSeller: true },
+  { name: 'Strawberry Shortcake Dream', category: 'Cakes', image: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800&q=80', isBestSeller: true },
+  { name: 'Blueberry Bliss Cheesecake', category: 'Cakes', image: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=800&q=80', isBestSeller: true },
   { name: 'Pistachio & Rose Elegance', category: 'Cakes', image: 'https://images.unsplash.com/photo-1519340333755-50721343e29e?w=800&q=80' },
   { name: 'Caramel Crunch Delight', category: 'Cakes', image: 'https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=800&q=80' },
   { name: 'Classic Vanilla Bean', category: 'Cakes', image: 'https://images.unsplash.com/photo-1557925923-33b27f891f88?w=800&q=80' },
@@ -24,8 +24,8 @@ const productsData = [
   { name: 'White Chocolate Raspberry', category: 'Cakes', image: 'https://images.unsplash.com/photo-1557925923-33b27f891f88?w=800&q=80' },
 
   // Theme Cakes
-  { name: 'Frozen Elsa Theme Cake', category: 'Theme Cakes', image: 'https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?w=800&q=80' },
-  { name: 'Spider-Man Heroic City Cake', category: 'Theme Cakes', image: 'https://images.unsplash.com/photo-1535254973040-607b474cb8c2?w=800&q=80' },
+  { name: 'Frozen Elsa Theme Cake', category: 'Theme Cakes', image: 'https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?w=800&q=80', isBestSeller: true },
+  { name: 'Spider-Man Heroic City Cake', category: 'Theme Cakes', image: 'https://images.unsplash.com/photo-1535254973040-607b474cb8c2?w=800&q=80', isBestSeller: true },
   { name: 'Unicorn Rainbow Magic Cake', category: 'Theme Cakes', image: 'https://images.unsplash.com/photo-1562440499-64c9a111f713?w=800&q=80' },
   { name: 'Space Explorer Adventure Cake', category: 'Theme Cakes', image: 'https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=800&q=80' },
   { name: 'Jungle Safari Animals Cake', category: 'Theme Cakes', image: 'https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?w=800&q=80' },

@@ -21,7 +21,7 @@ const ProductTable = ({ products, onEdit, onDelete }) => {
               <td className="px-10 py-8 text-xs font-black text-gray-300 dark:text-gray-500 uppercase tracking-widest group-hover:text-primary transition-colors">
                 #{product._id.substring(0, 8)}
               </td>
-              <td className="px-10 py-8 text-sm font-black text-dark dark:text-white tracking-tight">
+              <td className="px-10 py-8 text-sm font-black text-black dark:text-white tracking-tight">
                 <div className="flex items-center">
                   {product.name}
                   {product.isBestSeller && <Star className="w-3 h-3 ml-2 text-accent fill-current" />}
