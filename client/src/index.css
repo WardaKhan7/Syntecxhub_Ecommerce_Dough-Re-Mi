@@ -1,9 +1,191 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "./App.css";
+
+:root {
+  --theme-primary: #800000;
+  --theme-secondary: #F5F5DC;
+  --theme-accent: #D2691E;
+  --theme-dark: #2D0A0A;
+  --theme-light: #FFF8F0;
+  --theme-card-bg: #ffffff;
+  --theme-hero-gradient: #2C1E16;
+  --theme-banner: #2C1E16;
+  --theme-footer-bg: #2D0A0A;
+  --theme-footer-text: #ffffff; /* Explicit pure white */
+  --theme-promise-bg: #ffffff;
+  --theme-nav-text: #800000;
+  --theme-nav-bg: rgba(255, 255, 255, 0.9);
+  --theme-magical-from: rgba(210, 105, 30, 0.1);
+  --theme-magical-via: rgba(245, 245, 220, 0.4);
+  --theme-magical-border: rgba(210, 105, 30, 0.2);
+  --theme-btn-bg: #2D0A0A;
+  --theme-btn-text: #ffffff;
+}
+
+.dark {
+  --theme-primary: #800000;
+  --theme-secondary: #D4AF37; 
+  --theme-accent: #FF7F50;
+  --theme-dark: #F9FAFB;
+  --theme-light: #121214; /* Slightly lighter than #09090B */
+  --theme-card-bg: #1C1C1F; /* Slightly lighter than #18181B */
+  --theme-hero-gradient: #1C1C1F;
+  --theme-banner: #1C1C1F;
+  --theme-footer-bg: #121214;
+  --theme-footer-text: #F9FAFB;
+  --theme-promise-bg: transparent;
+  --theme-nav-text: #F9FAFB; 
+  --theme-nav-bg: rgba(28, 28, 31, 0.9); 
+  --theme-magical-from: #1C1C1F;
+  --theme-magical-via: #121214;
+  --theme-magical-border: rgba(255, 255, 255, 0.08);
+  --theme-btn-bg: #800000; /* Use brand maroon for button in dark mode instead of dark-variable (which is white) */
+  --theme-btn-text: #ffffff;
+}
 
 @layer base {
-  body {
-    @apply bg-light text-dark font-sans antialiased;
+  .dark .bg-white,
+  .dark .bg-\[\#FFF8F0\],
+  .dark .bg-\[\#F0F9FF\],
+  .dark .bg-\[\#F5F3FF\],
+  .dark .bg-\[\#F0FDF4\],
+  .dark .bg-gray-50 {
+    background-color: #290000 !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.4) !important;
+    border: 1px solid rgb(63 51 51) !important;
   }
+  .dark .border-gray-50,
+  .dark .border-gray-100 {
+    border-color: rgb(63 51 51) !important;
+  }
+}
+
+/* Admin cards bypass the dark mode bg-white override */
+.admin-card {
+  background-color: var(--admin-card-bg, #ffffff);
+}
+
+.bg-dark {
+  background-color: #000000;
+}
+
+.dark .bg-light {
+  background-color: #000000 !important;
+}
+
+.dark .bg-primary,
+.dark .bg-[#2D0A0A] {
+  background-color: #1c0000 !important;
+}
+
+.dark .bg-white-important {
+  background-color: #ffffff !important;
+}
+
+.dark .border-primary,
+.dark .border-gray-100,
+.dark .border-dark {
+  border-color: rgb(63 51 51) !important;
+}
+
+
+@theme {
+  --color-primary: var(--theme-primary);
+  --color-secondary: var(--theme-secondary);
+  --color-accent: var(--theme-accent);
+  --color-dark: var(--theme-dark);
+  --color-light: var(--theme-light);
+  --color-hero-gradient: var(--theme-hero-gradient);
+  --color-banner: var(--theme-banner);
+  --color-footer-bg: var(--theme-footer-bg);
+  --color-footer-text: var(--theme-footer-text);
+  --color-promise-bg: var(--theme-promise-bg);
+  --color-nav-text: var(--theme-nav-text);
+  --color-nav-bg: var(--theme-nav-bg);
+  --color-magical-from: var(--theme-magical-from);
+  --color-magical-via: var(--theme-magical-via);
+  --color-magical-border: var(--theme-magical-border);
+  --color-card-bg: var(--theme-card-bg);
+  --color-btn-bg: var(--theme-btn-bg);
+  --color-btn-text: var(--theme-btn-text);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+
+  --animate-fade-in: fade-in 0.5s ease-out both;
+  --animate-scale-in: scale-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  --animate-slide-up: slide-up 0.5s ease-out both;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@layer base {
+  html, body {
+    @apply bg-light text-dark font-sans antialiased overflow-x-hidden;
+    max-width: 100vw;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  .animate-fade-in { animation: var(--animate-fade-in); }
+  .animate-scale-in { animation: var(--animate-scale-in); }
+  .animate-slide-up { animation: var(--animate-slide-up); }
+}
+
+/* ProductDetails Dark Mode Styles */
+.dark .product-details-container {
+  background-color: #1c0000 !important;
+  border-color: rgb(63 51 51) !important;
+}
+
+.dark .product-details-left {
+  background-color: #290000 !important;
+}
+
+.dark .product-details-right {
+  background-color: #1c0000 !important;
+}
+
+.dark .product-details-text-secondary {
+  color: #ffffff !important;
+}
+
+.dark .product-details-text-muted {
+  color: #cccccc !important;
+}
+
+.dark .product-details-bg-light {
+  background-color: #1c0000 !important;
+  border-color: rgb(63 51 51) !important;
+}
+
+.dark .product-details-rating-bg {
+  background-color: #290000 !important;
+}
+
+.dark .product-details-rating-bar {
+  background-color: #800000 !important;
+}
+
+/* Product Title White in Dark Mode */
+.dark .product-title {
+  color: #ffffff !important;
 }

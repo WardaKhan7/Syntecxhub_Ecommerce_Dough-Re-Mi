@@ -1,0 +1,12 @@
+{
+  "name": "ecommerce-root",
+  "version": "1.0.0",
+  "scripts": {
+    "client": "npm run dev --prefix client",
+    "server": "npm run dev --prefix server",
+    "seed": "npm run seed --prefix server"
+  },
+  "dependencies": {
+    "@react-oauth/google": "^0.13.4"
+  }
+}
