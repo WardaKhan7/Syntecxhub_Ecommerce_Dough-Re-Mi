@@ -117,9 +117,11 @@ npm start
 
 ### 🔐 Login / Signup
 ![Login](client/screenshots/login.png)
+![Signup](client/screenshots/signin.png)
 
 ### 📊 Admin Dashboard
 ![Admin](client/screenshots/admin.png)
+
 ---
 
 ## 🌟 Learning Outcomes
@@ -147,8 +149,8 @@ Aspiring Full Stack Developer ✨
 
 ## 📢 Connect with me
 
-* LinkedIn: [https://linkedin.com/in/your-profile](https://linkedin.com/in/your-profile)
-* GitHub: [https://github.com/your-username](https://github.com/your-username)
+* LinkedIn: [https://www.linkedin.com/in/vvarda-khan](https://www.linkedin.com/in/vvarda-khan)
+* GitHub: [https://github.com/WardaKhan7](https://github.com/WardaKhan7)
 
 ---
 
